@@ -79,6 +79,7 @@ function checkIfAdmin(potUser, potPass) {
                     msg.innerText = "ERROR INCORRECT USER AND OR PASSWORD";
                 } else {
                     msg.innerText = "";
+                    history.pushState({}, "", "index.php");
                     location.replace(res.adminRedirect);
                 }
                 
