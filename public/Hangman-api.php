@@ -19,6 +19,11 @@ if (!isset($_SESSION['game'])) {
     //$test = $game.getObject();
     $_SESSION['game'] = $game;
     //$game = $_SESSION['game'];
+
+    if (isset($_SESSION['is_admin'])) {
+        unset($_SESSION['is_admin']);
+    }
+    
 }
 else {
     // Try to unserialize the game object from the session
@@ -196,6 +201,7 @@ if (isset($_GET['action'])) {
 
             
                 if($potentialAdminUser === getenv('ADMIN_USERNAME') && $potentialAdminPass === getenv('ADMIN_PASSWORD')){
+                    $_SESSION['is_admin'] = true;
                     echo json_encode(['adminStatus' =>  true, 'adminRedirect' => "admin.php"]);
 
                 }
