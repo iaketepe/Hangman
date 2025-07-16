@@ -18,6 +18,10 @@ div {
     
 }
 
+table {
+    margin: 0 auto;
+}
+
 .start{
     width: 15%;
     min-width: 260px;
