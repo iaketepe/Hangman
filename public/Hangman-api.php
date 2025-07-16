@@ -195,7 +195,7 @@ if (isset($_GET['action'])) {
                 //var_dump($potentialAdminPass);
 
             
-                if($potentialAdminUser === "dbAdmin" && $potentialAdminPass === "qwerpoiu"){
+                if($potentialAdminUser === getenv('ADMIN_USERNAME') && $potentialAdminPass === getenv('ADMIN_PASSWORD')){
                     echo json_encode(['adminStatus' =>  true, 'adminRedirect' => "admin.php"]);
 
                 }
