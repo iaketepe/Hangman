@@ -50,7 +50,7 @@ if (!isset($_SESSION['leaderboard'])) {
     </div>
     <div class="items spacer">
         <h2>Leaderboard</h2>
-        <table id="leaderboard">
+        <table id="leaderboard" style="margin: 0 auto;">
                         <tr>
                             <th>Name</th>
                             <th>Score</th>
