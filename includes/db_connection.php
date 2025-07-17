@@ -14,9 +14,17 @@ if ($components) {
     $host = $components['host'];
     $port = $components['port'] ?? 5432;
     $dbname = ltrim($components['path'], '/');
-    
 
-    $dsn = 'pgsql:host=' . $host . ';port=' . $port . ';dbname=' . $dbname;
+    parse_str($components['query'] ?? '', $queryParams);
+
+    $sslmode = $queryParams['sslmode'] ?? 'prefer';
+    $channelBinding = $queryParams['channel_binding'] ?? null;
+    
+    $dsn = 'pgsql:host=' . $host . ';port=' . $port . ';dbname=' . $dbname . ';sslmode=' . $sslmode;
+    
+    if ($channelBinding) {
+        $dsn .= ";channel_binding=$channelBinding";
+    }
 
     try {
         $pdo = new PDO($dsn, $username, $password);
@@ -24,6 +32,7 @@ if ($components) {
         // echo "Connected successfully!";
     } catch (PDOException $e) {
         echo "Connection failed: " . $e->getMessage();
+        exit(1);
     }
 } else {
     die('Invalid DATABASE_URL format.');
