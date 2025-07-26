@@ -40,32 +40,39 @@ if (!isset($_SESSION['leaderboard'])) {
     <title>Hangman</title>
     <link  type="text/css" rel="stylesheet" href="index.css">
 </head>
+
 <body>
-    <div class="start">
-        <h1>Hangman</h1>
-        <p>The simple word game</p>
-        <label>Enter Player Name:</label>
-        <input type="text" id="user-input">
-        <button id="start-button" onclick="verifyStartGameState()">Start</button>
+    <div class="flex flex-col page-wrapper">
+        <div class="main-content">
+            <div class="start box">
+                <h1>Hangman</h1>
+                <p>The simple word game</p>
+                <label>Enter Player Name:</label>
+                <input type="text" id="user-input">
+                <button id="start-button" onclick="verifyStartGameState()">Start</button>
+            </div>
+            <div class="items spacer box">
+                <h2>Leaderboard</h2>
+                <table id="leaderboard" style="margin: 0 auto;">
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Score</th>
+                                </tr>
+                </table>
+            </div>
+            <div class="start spacer box" id="admin-div">
+                <h1>Admin Login</h1>
+                <label>Username:</label>
+                <input type="text" id="potentialAdminUser">
+                <label>Password:</label>
+                <input type="text" id="potentialAdminPass">
+                <button id="start-button" onclick="checkIfAdmin()">Login</button>
+                <label id="msg"></label>
+            </div>
+        </div>
+
     </div>
-    <div class="items spacer">
-        <h2>Leaderboard</h2>
-        <table id="leaderboard" style="margin: 0 auto;">
-                        <tr>
-                            <th>Name</th>
-                            <th>Score</th>
-                        </tr>
-        </table>
-    </div>
-    <div class="start spacer" id="admin-div">
-        <h1>Admin Login</h1>
-        <label>Username:</label>
-        <input type="text" id="potentialAdminUser">
-        <label>Password:</label>
-        <input type="text" id="potentialAdminPass">
-        <button id="start-button" onclick="checkIfAdmin()">Login</button>
-        <label id="msg"></label>
-    </div>
+
 </body>
 <script src="index.js"></script>
 </html>

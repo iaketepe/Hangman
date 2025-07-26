@@ -1,6 +1,24 @@
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+
+.page-wrapper {
+    width: 100%;
+    max-width: 1200px;
+    height: 100vh;
+    margin: 0 auto;
+}
+
 body {
-    margin-top: 25vh;
     background-color: rgb(185, 185, 185);
+}
+
+.main-content {
+    margin-top: 12.5vh;
 }
 
 h1 {
@@ -8,10 +26,13 @@ h1 {
 }
 
 div {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.box {
     padding: 30px;
     padding-top: 15px;
-    text-align: center;
-    margin:auto;
     border: 5px solid black;
     border-radius: 25px;
     background-color: rgb(255, 255, 255);
@@ -35,4 +56,13 @@ table {
 
 .spacer {
     margin-top: 5vh;
+}
+
+
+.flex {
+    display: flex;
+}
+
+.flex-col {
+    flex-direction: column;
 }
