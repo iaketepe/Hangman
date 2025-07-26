@@ -93,7 +93,7 @@ if (isset($_GET['action'])) {
 
                     $pdo->beginTransaction();
 
-                    $query = 'INSERT INTO "LeaderboardSchema"."LeaderboardTable" (player_name, score) VALUES (:player_name, :score) ON CONFLICT (player_name) DO UPDATE SET score = GREATEST(EXCLUDED.score, LeaderboardTable.score);';
+                    $query = 'INSERT INTO "LeaderboardSchema"."LeaderboardTable" (player_name, score) VALUES (:player_name, :score) ON CONFLICT (player_name) DO UPDATE SET score = GREATEST(EXCLUDED.score, score);';
                     $stmt = $pdo->prepare($query);
                     $stmt->execute([
                         'player_name' => $_SESSION['currentUser'][0],
