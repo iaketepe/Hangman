@@ -18,7 +18,8 @@ body {
 }
 
 .main-content {
-    margin-top: 12.5vh;
+    height: 75%;
+    padding: 2%;
 }
 
 h1 {
@@ -27,7 +28,7 @@ h1 {
 
 div {
     text-align: center;
-    margin: 0 auto;
+    margin: auto;
 }
 
 .box {
