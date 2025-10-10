@@ -7,6 +7,9 @@ jobs:
     steps:
       - name: Ping DB through app
         run: |
-          echo "Starting curl test..." 
-          curl -sfL hangman-3x9r.onrenver.com || echo "⚠️ Ping failed!"
-          echo "Curl test complete!"
+          echo "Starting Curl Test..." 
+          if ! curl -sfL hangman-3x9r.onrenver.com; then
+            echo "⚠️ Ping failed!"
+            exit 1
+          fi
+          echo "End of Curl Test"
