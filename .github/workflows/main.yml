@@ -1,0 +1,12 @@
+name: HangmanDB-Actions
+run-name: HangmanDB-Action
+on: workflow_dispatch
+jobs:
+  ping-DB:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping DB through app
+      - run: |
+          echo "Starting curl test..." 
+          curl -sf hangman-3x9r.onrender.com || echo "⚠️ Ping failed!"
+          echo "Curl test complete!"
