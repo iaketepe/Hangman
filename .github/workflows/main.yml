@@ -8,8 +8,8 @@ jobs:
       - name: Ping DB through app
         run: |
           echo "Starting Curl Test..." 
-          if ! curl -sfL hangman-3x9r.onrenver.com; then
+          if ! curl -sfL hangman-3x9r.onrender.com/; then
             echo "⚠️ Ping failed!"
             exit 1
           fi
-          echo "End of Curl Test"
+          echo "Curl Test Completed!"
