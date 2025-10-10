@@ -1,6 +1,8 @@
 name: HangmanDB-Actions
 run-name: HangmanDB-Action
-on: workflow_dispatch
+on: 
+  schedule:
+    - cron: '0 0 */6 * *'
 jobs:
   ping-DB:
     runs-on: ubuntu-latest
