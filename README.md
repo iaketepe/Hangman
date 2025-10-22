@@ -1,4 +1,4 @@
-Students: Natalie Colman (300177579) and  Iyanuloluwa Aketepe (300170701)
+# Hangman 
 
 ### Developing the app
 This is our hangman game, coded in PHP, HTML, JS and CSS, as well as SQL usage for the database. In order to get started, first we had to install PHP and Postgres.
