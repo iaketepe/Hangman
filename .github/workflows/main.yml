@@ -2,7 +2,7 @@ name: HangmanDB-Actions
 run-name: HangmanDB-Action
 on: 
   schedule:
-    - cron: '0 0 */6 * *'
+    - cron: '0 0 */1 * *'
 jobs:
   ping-DB:
     runs-on: ubuntu-latest
